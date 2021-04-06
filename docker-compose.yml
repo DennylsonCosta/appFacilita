@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  laravel:
+    build: .
+    ports:
+      - "8090:80"
+    volumes:
+      - ./:/usr/share/nginx
+    networks:
+      - database
+    deploy:
+      resources:
+        limits:
+          memory: 1024M
+          cpus: "0.5"
+
+networks:
+  database:
+    external:
+      name: "database_database"
