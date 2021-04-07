@@ -2,7 +2,7 @@ version: '2'
 
 services:
   laravel:
-    build: .
+    build: ./docker
     ports:
       - "8090:80"
     volumes:
